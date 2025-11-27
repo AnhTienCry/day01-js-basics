@@ -10,26 +10,35 @@
 
 function add(a, b) {
     // TODO: Cộng 2 số
+    return a + b;
 }
 
 function subtract(a, b) {
     // TODO: Trừ 2 số
+    return a - b;
 }
 
 function multiply(a, b) {
     // TODO: Nhân 2 số
+    return a * b;
 }
 
 function divide(a, b) {
     // TODO: Chia 2 số (xử lý chia cho 0)
+    if (b === 0) {
+        return "Error: Division by zero";
+    }
+    return a / b;
 }
 
 function modulo(a, b) {
     // TODO: Chia lấy dư
-}
+    return a % b;
+}   
 
 function power(a, b) {
     // TODO: Lũy thừa a^b
+    return a ** b;
 }
 
 // ===== HÀM CALCULATOR CHÍNH =====
@@ -37,6 +46,22 @@ function calculate(a, operator, b) {
     // TODO: Dựa vào operator, gọi hàm tương ứng
     // operator: '+', '-', '*', '/', '%', '**'
     // Trả về kết quả hoặc "Invalid operator" nếu operator không hợp lệ
+    switch(operator) {
+        case '+':
+            return add(a, b);
+        case '-':
+            return subtract(a, b);
+        case '*':
+            return multiply(a, b);
+        case '/':
+            return divide(a, b);
+        case '%':
+            return modulo(a, b);
+        case '**':
+            return power(a, b);
+        default:
+            return "Invalid operator";
+    }
 }
 
 // ===== TEST CALCULATOR =====
